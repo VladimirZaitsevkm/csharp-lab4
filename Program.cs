@@ -1,15 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProgrammingLab42
+class Program
 {
-  internal class Program
+  static void Main(string[] args)
   {
-    static void Main(string[] args)
+    Console.WriteLine("Simple Text Editor with Undo Feature");
+    Console.WriteLine("-----------------------------------");
+
+    try
     {
+      var editor = new TextEditor();
+      editor.Run();
     }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"Fatal error: {ex.Message}");
+      Console.WriteLine("Press any key to exit...");
+      Console.ReadKey();
+    }
+
+    Console.WriteLine("\nThank you for using the text editor!");
   }
 }
